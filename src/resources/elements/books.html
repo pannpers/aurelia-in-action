@@ -1,0 +1,17 @@
+<template>
+  <require from="./book-lit"></require>
+
+  <h1>Add Book</h1>
+
+  <form submit.trigger="addBook()">
+    <label for="book-title"></label>
+
+    <input value.bind="bookTitle" type="text" id="book-title" placeholder="book title...">
+
+    <input type="submit" value="add">
+  </form>
+
+  <hr>
+
+  <book-list books.bind="books"></book-list>
+</template>
