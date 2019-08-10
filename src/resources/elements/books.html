@@ -1,15 +1,23 @@
 <template>
   <require from="./book-lit"></require>
+  <require from="./heading.html"></require>
 
-  <h1>Add Book</h1>
+  <heading text.bind="'books'"></heading>
 
-  <form submit.trigger="addBook()">
-    <label for="book-title"></label>
+  <div class="card">
+    <div class="card-block">
+      <form submit.trigger="addBook()" class="form-inline">
+        <label for="book-title"></label>
 
-    <input value.bind="bookTitle" type="text" id="book-title" placeholder="book title...">
+        <input value.bind="bookTitle" type="text"
+            id="book-title" class="form-control" placeholder="book title...">
 
-    <input type="submit" value="add">
-  </form>
+        <input type="submit" value="add" class="btn btn-success tap-right">
+      </form>
+
+    </div>
+  </div>
+
 
   <hr>
 
