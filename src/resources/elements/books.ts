@@ -1,4 +1,4 @@
-import { autoinject } from 'aurelia-framework'
+import { autoinject, computedFrom, observable } from 'aurelia-framework'
 import { BookApi } from 'services/book-api'
 
 export interface Book {
@@ -20,5 +20,10 @@ export class Books {
   addBook(): void {
     this.books.push({ title: this.bookTitle })
     this.bookTitle = ''
+  }
+
+  @computedFrom('bookTitle.length')
+  get canAdd(): boolean {
+    return this.bookTitle.length > 0
   }
 }

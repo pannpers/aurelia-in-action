@@ -1,6 +1,7 @@
 <template>
-  <require from="./book-lit"></require>
+  <require from="./book-list"></require>
   <require from="./heading.html"></require>
+  <require from="./book-stats"></require>
 
   <heading text.bind="'books'"></heading>
 
@@ -12,7 +13,8 @@
         <input value.bind="bookTitle" type="text"
             id="book-title" class="form-control" placeholder="book title...">
 
-        <input type="submit" value="add" class="btn btn-success tap-right">
+        <input type="submit" value="add" class="btn btn-success tap-right"
+            disabled.to-view="!canAdd">
       </form>
 
     </div>
@@ -22,4 +24,10 @@
   <hr>
 
   <book-list books.bind="books"></book-list>
+
+  <hr>
+
+  <book-stats if.bind="books.length > 0" books.bind="books"
+      original-number-of-books.one-time="books.length">
+  </book-stats>
 </template>
