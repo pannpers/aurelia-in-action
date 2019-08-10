@@ -6,10 +6,8 @@ import { Book } from 'resources/elements/books'
 export class BookApi {
   constructor(private http: HttpClient) {}
 
-  getBooks(): Promise<Book[]> {
-    return this.http
-      .fetch('books.json')
-      .then(resp => resp.json())
-      .then(books => books as Book[])
+  async getBooks(): Promise<Book[]> {
+    const resp = await this.http.fetch('books.json')
+    return resp.json()
   }
 }

@@ -1,0 +1,261 @@
+/***********************************************************************************************************/
+/** Bootstrap theme specific CSS - Reference https://v4-alpha.getbootstrap.com/examples/narrow-jumbotron/ **/
+/***********************************************************************************************************/
+
+/* Space out content a bit */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 1rem;
+  border-bottom: .05rem solid #e5e5e5;
+
+  /* Make the masthead heading the same height as the navigation */
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 3rem;
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 2rem 0;
+}
+
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+
+  .btn {
+    padding: .75rem 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.btn-secondary {
+  color: #292b2c;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+/***********************************************************************************************************/
+/** End Bootstrap theme specific CSS                                                                      **/
+/***********************************************************************************************************/
+
+/***********************************************************************************************************/
+/** Custom my-books CSS **/
+/***********************************************************************************************************/
+body {
+  background-color: #f5f8fa;
+}
+
+/* Add box-shadow to jumbotron */
+.jumbotron {
+  background-color: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Add brand highlight color (theme) */
+.brand-highlight {
+  color: #2ecc71;
+}
+
+/* Add nav bar brand highlight color (theme) */
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+  color: #fff;
+  background-color: #27ae60;
+}
+
+/* Add brand button-success color (theme) */
+.btn-success {
+  background-color: #27ae60;
+
+  :hover {
+    background-color: #2ecc71;
+  }
+
+  :disabled {
+    background-color: #43bd99;
+  }
+}
+
+.btn-outline-success {
+  color: #27ae60;
+  border-color: #27ae60;
+
+  :hover {
+    color: white;
+    border-color: #27ae60;
+    background-color: #27ae60;
+  }
+}
+
+.cancel {
+  color: #d9534f;
+}
+
+.tap-right {
+  margin-left: 10px;
+}
+
+.page-heading {
+  border-bottom: 2px solid #2ecc71;
+}
+
+/* Hover style button for font-awesome icons */
+.remove-button {
+  color: rgba(70, 74, 76, 0.76);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  :hover {
+    background-color: #eceeef;
+    cursor: pointer;
+    color: #292b2c;
+  }
+}
+
+/* Hide some content until we receive a hover event */
+.hover-display {
+  display: none;
+}
+
+/* Read button state changes */
+.read-button {
+  :hover {
+    cursor: pointer;
+
+    span.hover-display {
+      display: initial;
+    }
+  }
+
+  :disabled span.hover-display {
+    display: none;
+  }
+}
+
+.edit-button:hover {
+  cursor: pointer;
+}
+
+/* Book list styles */
+li.read-book {
+  border-left: 3px solid #2ecc71 !important;
+}
+
+.book-event {
+  background-color: #eceeef;
+}
+
+/* Animations */
+.books > li {
+  &.au-enter {
+    opacity: 0 !important;
+  }
+  &.au-enter-active {
+    animation: fadeIn 2s;
+  }
+  &.au-leave-active {
+    animation: fadeOut 0.5s;
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.transformable {
+  transition: height 100ms linear;
+}
+
+/* End Animations */
+
+/* edit-book panel styles */
+.edit-book {
+  &.hidden {
+    height: 0px;
+
+    div.wrapper {
+      display: none;
+    }
+  }
+
+  &.visible {
+    height: 355px;
+    background-color: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 15px;
+    border-top: 2px solid #ccc;
+  }
+}
+
+/* ratings components */
+ul.ratings li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+}
+
+.star {
+  :hover {
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  &.rated {
+    color: rgb(255, 204, 0);
+  }
+}
+
+
+

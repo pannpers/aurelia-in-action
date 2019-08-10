@@ -5,6 +5,7 @@ export class App {
 
   configureRouter(config: RouterConfiguration, router: Router): void {
     this.router = router
+    // eslint-disable-next-line no-param-reassign
     config.title = 'my-books'
     config.map([
       {
