@@ -6,11 +6,11 @@
   <heading text.bind="'books'"></heading>
 
   <div class="card">
-    <div class="card-block">
+    <div class="card-body">
       <form submit.trigger="addBook()" class="form-inline">
         <label for="book-title"></label>
 
-        <input value.bind="bookTitle" type="text"
+        <input value.bind="bookTitle & debounce: 850" type="text"
             id="book-title" class="form-control" placeholder="book title...">
 
         <input type="submit" value="add" class="btn btn-success tap-right"
