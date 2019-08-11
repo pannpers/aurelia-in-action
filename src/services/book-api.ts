@@ -10,4 +10,10 @@ export class BookApi {
     const resp = await this.http.fetch('books.json')
     return resp.json()
   }
+
+  async saveBook(book: Book): Promise<Book> {
+    return new Promise(resolve => {
+      setTimeout(() => resolve(book), 1000)
+    })
+  }
 }

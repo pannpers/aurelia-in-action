@@ -33,6 +33,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'lines-between-class-members': 'off',
     'no-useless-constructor': 'off',
+    'no-unused-expressions': 'warn',
     'no-param-reassign': 'warn',
     'no-empty-function': 'off',
     'class-methods-use-this': 'off',

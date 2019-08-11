@@ -1,41 +1,28 @@
 <template>
   <require from="../attributes/tooltip"></require>
-  <require from="../value-converters/book-status"></require>
+  <require from="./book-detail"></require>
   <require from="../value-converters/filter"></require>
-  <require from="../value-converters/search-bold"></require>
-  <require from="../value-converters/highlight"></require>
 
   <div class="card">
     <div class="card-header form-inline">
       <div class="input-group">
+
         <div class="input-group-prepend">
           <span class="input-group-text" id="filter-icon">
             <i class="fas fa-search" aria-hidden="true"></i>
           </span>
         </div>
+
         <input type="text" class="form-control" placeholder="filter"
             aria-describedby="filter-icon" value.bind="searchTerm">
       </div>
     </div>
 
     <ul class="books list-group list-group-flush">
-      <li repeat.for="book of books | filter: searchTerm"
-          class="list-group-item">
-        <div class="book row">
-          <div class="col-10" innerhtml.bind="book.title | searchBold: searchTerm | highlight"></div>
-
-          <span class="col-1">
-            <i class="far ${book.status | bookStatus}" aria-hidden="true"></i>
-          </span>
-
-          <div class="col-1">
-            <span click.delegate="removeBook($index)" class="remove-button"
-                tooltip="title: Remove book from list; placement: right">
-              <i class="fas fa-trash-alt" aria-hidden="true"></i>
-            </span>
-          </div>
-        </div>
-      </li>
+      <book-detail repeat.for="book of books | filter: searchTerm"
+            book.to-view="book"
+            search-term.to-view="searchTerm">
+      </book-detail>
     </ul>
   </div>
 </template>
